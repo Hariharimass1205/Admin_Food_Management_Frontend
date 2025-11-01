@@ -55,7 +55,6 @@ export default function OrdersPage() {
       return;
     }
     
-    // Check if product is already in the order
     const alreadyAdded = orderItems.some(item => item.productId === selectedProductId);
     if (alreadyAdded) {
       setError('This product is already in the order');

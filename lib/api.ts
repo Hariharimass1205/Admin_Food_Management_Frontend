@@ -1,6 +1,5 @@
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
 
-// Helper function to handle API responses
 async function handleResponse<T>(response: Response): Promise<T> {
   const data = await response.json();
   if (!response.ok) {
@@ -62,8 +61,6 @@ export interface LoginResponse {
   token: string;
   admin: Admin;
 }
-
-// Helper function to get auth headers
 export const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
   return {
